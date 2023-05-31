@@ -18,7 +18,7 @@ const Home: NextPage = () => {
     if(userProfile) return
     if(session){
      authenticateUser()
-    console.log(session)
+    
     } else {
       removeUser()
     }
@@ -30,6 +30,7 @@ const Home: NextPage = () => {
     
     await axios.post('/api/user',session)
     .then((res)=>{
+      console.log(res)
       setUserProfile(res.data[0].email) 
       setUserCredit(res.data[0].credit)
       
