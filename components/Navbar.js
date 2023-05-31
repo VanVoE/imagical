@@ -79,7 +79,7 @@ const Navbar = ({userProfile,signIn, signOut, session, userCredit, increaseUserC
       
         <div className='max-w-7xl mx-auto flex justify-between items-center'>
                 
-                <h1 className='text-4xl font-bold'>I-magical</h1>
+                <h1 className='text-2xl md:text-4xl font-bold'>I-magical</h1>
               
             
          
@@ -87,9 +87,9 @@ const Navbar = ({userProfile,signIn, signOut, session, userCredit, increaseUserC
                 <div className='flex space-x-10'>
                   
                   
-                  <div onClick={buyCoins}>Buy Coins</div>
+                  <div onClick={buyCoins} className='cursor-pointer'>Buy Coins</div>
                   
-                  {session ? <div onClick={() => signOut()}>Sign Out - {userCredit} Coins Left</div> : <div onClick={() => signIn()}>Sign In</div>}
+                  {session ? <div onClick={() => signOut()} className='cursor-pointer'>Sign Out - {userCredit} Coins Left</div> : <div onClick={() => signIn()} className='cursor-pointer'>Sign In</div>}
                   
                 </div>
            

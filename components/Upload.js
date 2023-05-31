@@ -113,8 +113,8 @@ import 'react-toastify/dist/ReactToastify.css';
   return (
     <div className='flex flex-col'>
       
-      <div className='mt-40 flex gap-x-20 justify-center'>
-        <div className='w-[312px] h-[312px]'>
+      <div className='mt-40 flex flex-col md:flex-row gap-x-20 justify-center'>
+        <div className='w-full md:w-[312px] h-[312px] pl-5 pr-5 md:p-0'>
         <form onSubmit={handleSubmit} className='w-full h-full'>
         {uploadedImage ? (
           <div className='relative w-[312px] h-[312px]'>
@@ -145,8 +145,8 @@ import 'react-toastify/dist/ReactToastify.css';
         </form>
         </div>
 
-        <div className='w-[50%] flex flex-col gap-y-5'>
-          <h1 className='text-4xl font-bold'>Let's recreate your image!</h1>
+        <div className='w-full md:w-[50%] flex flex-col gap-y-5 mt-32 md:mt-0 p-5 md:p-0'>
+          <h1 className='text-2xl md:text-4xl font-bold'>Let's recreate your image!</h1>
           <p>Upload any image and watch the magic of AI recreate variations of your image!</p>
         </div>
         </div>
