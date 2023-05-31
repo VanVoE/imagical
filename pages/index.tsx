@@ -30,7 +30,7 @@ const Home: NextPage = () => {
     
     await axios.post('/api/user',session)
     .then((res)=>{
-      console.log(res.data[0])
+     
       setUserProfile(res.data[0].email) 
       setUserCredit(res.data[0].credit)
       
