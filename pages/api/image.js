@@ -49,27 +49,27 @@ export default async function handler(
     })
    
 
-    const resizeImage = () => {
-      let inputFile = data
-      let outputFile = './public/uploads/upload.png'
-      sharp(inputFile)
-      .resize(1024,1024,{fit:'contain'})
-      .toFile(outputFile)
-      .then(() => generateImage())
-      .catch((err)=>{
-        console.log('Error Occured Resizing')
-        res.status(500).json({error:err})
+    // const resizeImage = () => {
+    //   let inputFile = data
+    //   let outputFile = './public/uploads/upload.png'
+    //   sharp(inputFile)
+    //   .resize(1024,1024,{fit:'contain'})
+    //   .toFile(outputFile)
+    //   .then(() => generateImage())
+    //   .catch((err)=>{
+    //     console.log('Error Occured Resizing')
+    //     res.status(500).json({error:err})
       
-      })
-    }
+    //   })
+    // }
 
-    resizeImage()
+    // resizeImage()
 
   
   const generateImage = async () =>{
     try{
            const response = await openai.createImageVariation(
-            fs.createReadStream('./public/uploads/upload.png'),
+            fs.createReadStream('./public/uploads/original.png'),
            4,
            "1024x1024")
       
@@ -90,6 +90,8 @@ export default async function handler(
      }
 
   }
+
+  generateImage()
 
 
   
