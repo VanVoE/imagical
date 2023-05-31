@@ -18,7 +18,7 @@ const Home: NextPage = () => {
     if(userProfile) return
     if(session){
      authenticateUser()
-    
+    console.log(session)
     } else {
       removeUser()
     }
