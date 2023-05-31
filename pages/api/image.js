@@ -49,7 +49,7 @@ export default async function handler(
     })
    
 
-    const resizeImage = (data) => {
+    const resizeImage = () => {
       let inputFile = data
       let outputFile = './public/uploads/upload.png'
       sharp(inputFile)
