@@ -36,7 +36,7 @@ export default async function handler(
    const data = await new Promise((resolve, reject) => {
     form.parse(req, (err, fields, files) => {
       if (err) return reject(err)
-      
+      console.log(files)
      
       let oldPath = files.file.filepath
       let newPath = `./public/uploads/original.png`
