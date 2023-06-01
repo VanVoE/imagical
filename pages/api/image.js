@@ -39,7 +39,7 @@ export default async function handler(
       console.log(files)
      
       let oldPath = files.file.filepath
-      let newPath = `./public/uploads/original.png`
+      let newPath = `/tmp/original.png` //testing: `./public/uploads/original.png`
       mv(oldPath, newPath, function(err) {
       });
      
@@ -49,21 +49,21 @@ export default async function handler(
     })
    
 
-    // const resizeImage = () => {
-    //   let inputFile = data
-    //   let outputFile = './public/uploads/upload.png'
-    //   sharp(inputFile)
-    //   .resize(1024,1024,{fit:'contain'})
-    //   .toFile(outputFile)
-    //   .then(() => generateImage())
-    //   .catch((err)=>{
-    //     console.log('Error Occured Resizing')
-    //     res.status(500).json({error:err})
+    const resizeImage = () => {
+      let inputFile = data
+      let outputFile = '/tmp/upload.png' //testing: './public/uploads/upload.png'
+      sharp(inputFile)
+      .resize(1024,1024,{fit:'contain'})
+      .toFile(outputFile)
+      .then(() => generateImage())
+      .catch((err)=>{
+        console.log('Error Occured Resizing')
+        res.status(500).json({error:err})
       
-    //   })
-    // }
+      })
+    }
 
-    // resizeImage()
+    resizeImage()
 
   
   const generateImage = async () =>{
@@ -91,7 +91,6 @@ export default async function handler(
 
   }
 
-  generateImage()
 
 
   
