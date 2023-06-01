@@ -36,7 +36,7 @@ export default async function handler(
    const data = await new Promise((resolve, reject) => {
     form.parse(req, (err, fields, files) => {
       if (err) return reject(err)
-      console.log(files)
+      console.log(files.file.filepath)
      
       let oldPath = files.file.filepath
       let newPath = `/tmp/original.png` //testing: `./public/uploads/original.png`
@@ -69,7 +69,7 @@ export default async function handler(
   const generateImage = async () =>{
     try{
            const response = await openai.createImageVariation(
-            fs.createReadStream('./public/uploads/original.png'),
+            fs.createReadStream('/tmp/upload.png'),
            4,
            "1024x1024")
       
