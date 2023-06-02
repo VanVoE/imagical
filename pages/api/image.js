@@ -31,7 +31,7 @@ export default async function handler(
 
    const form = new formidable.IncomingForm()
  
-   
+   console.log('test')
  
    const data = await new Promise((resolve, reject) => {
     form.parse(req, (err, fields, files) => {
