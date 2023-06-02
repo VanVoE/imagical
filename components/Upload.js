@@ -81,7 +81,7 @@ import 'react-toastify/dist/ReactToastify.css';
           
           setGeneratedImages(response.data.data)
 
-         
+         console.log('testing')
         //   const updatedData = {
         //     user: userProfile,
         //     credit: userCredit - 1, // cost 
