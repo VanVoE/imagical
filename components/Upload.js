@@ -83,7 +83,7 @@ import 'react-toastify/dist/ReactToastify.css';
           
         }).catch((e)=>{
          
-          return
+          return console.log(e)
         })
         
         const updatedData = {
