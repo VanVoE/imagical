@@ -31,16 +31,17 @@ export default async function handler(
 
    const form = new formidable.IncomingForm()
  
-   console.log('test')
+
+   let oldPath = ''
  
    const data = await new Promise((resolve, reject) => {
     form.parse(req, (err, fields, files) => {
       if (err) return reject(err)
       
      
-      let oldPath = files.file.filepath
+      oldPath = files.file.filepath
 
-      console.log(oldPath)
+      
       // let newPath = `/tmp/original.png` //testing: `./public/uploads/original.png`
       // mv(oldPath, newPath, function(err) {
       // });
@@ -70,14 +71,15 @@ export default async function handler(
   
   const generateImage = async () =>{
     try{
+           console.log(oldPath)
            const response = await openai.createImageVariation(
-            fs.createReadStream(data),
+            fs.createReadStream(oldPath),
            4,
            "1024x1024")
       
           
          
-           console.log(response.data)
+           
            res.status(200).json(response.data)
           
           
