@@ -78,8 +78,10 @@ import 'react-toastify/dist/ReactToastify.css';
 
         const res = await axios.post('/api/image',data).then((response)=>
         {
-          console.log(response.status)
+          
           setGeneratedImages(response.data.data)
+
+          console.log('fart')
           const updatedData = {
             user: userProfile,
             credit: userCredit - 1, // cost 
