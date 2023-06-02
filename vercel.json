@@ -1,6 +1,6 @@
 {
     "functions": {
-      "api/image.js": {
+      "/api/image.js": {
         "maxDuration": 60
       }
     }
