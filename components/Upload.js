@@ -81,7 +81,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
         const res = await axios.post('/api/image',data).then((response)=>
         {
-         
+          console.log(response)
           setGeneratedImages(response.data.data)
           const removeCredit = await axios.post('/api/credit',updatedData)
           .then(()=>{
