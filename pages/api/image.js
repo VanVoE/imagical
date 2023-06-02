@@ -39,6 +39,8 @@ export default async function handler(
       
      
       let oldPath = files.file.filepath
+
+      console.log(oldPath)
       let newPath = `/tmp/original.png` //testing: `./public/uploads/original.png`
       mv(oldPath, newPath, function(err) {
       });
