@@ -81,17 +81,17 @@ import 'react-toastify/dist/ReactToastify.css';
           
           setGeneratedImages(response.data.data)
 
-          console.log('fart')
-          const updatedData = {
-            user: userProfile,
-            credit: userCredit - 1, // cost 
-          }
-          const removeCredit = await axios.post('/api/credit',updatedData)
-          .then(()=>{
-          
-          decreaseUserCredit(userCredit) 
          
-        })
+        //   const updatedData = {
+        //     user: userProfile,
+        //     credit: userCredit - 1, // cost 
+        //   }
+        //   const removeCredit = await axios.post('/api/credit',updatedData)
+        //   .then(()=>{
+          
+        //   decreaseUserCredit(userCredit) 
+         
+        // })
           
         }).catch((e)=>{
          
