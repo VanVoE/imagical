@@ -41,12 +41,12 @@ export default async function handler(
       let oldPath = files.file.filepath
 
       console.log(oldPath)
-      let newPath = `/tmp/original.png` //testing: `./public/uploads/original.png`
-      mv(oldPath, newPath, function(err) {
-      });
+      // let newPath = `/tmp/original.png` //testing: `./public/uploads/original.png`
+      // mv(oldPath, newPath, function(err) {
+      // });
      
      
-      resolve(newPath)
+      resolve(oldPath)
     })
     })
    
@@ -71,7 +71,7 @@ export default async function handler(
   const generateImage = async () =>{
     try{
            const response = await openai.createImageVariation(
-            fs.createReadStream('/tmp/original.png'),
+            fs.createReadStream(data),
            4,
            "1024x1024")
       
