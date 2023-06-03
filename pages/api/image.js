@@ -74,8 +74,8 @@ export default async function handler(
            console.log(oldPath)
            const response = await openai.createImageVariation(
             fs.createReadStream(oldPath),
-           4,
-           "1024x1024")
+           1,
+           "512x512")
       
           
          
