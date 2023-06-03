@@ -25,6 +25,7 @@ import 'react-toastify/dist/ReactToastify.css';
     setButtonText('Generate')
     setButtonDisabled(false)
     setButtonCss(enabled)
+    console.log('testing...')
    }else{
     setButtonText('Sign In')
     setButtonDisabled(true)
