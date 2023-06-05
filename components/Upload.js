@@ -171,7 +171,7 @@ import 'react-toastify/dist/ReactToastify.css';
               <h2 className='mt-10'>Please save your images, these aren't stored anywhere.</h2>
           </div>
           )}
-          <div className='flex gap-x-5 mt-20'>
+          <div className='flex flex-col md:flex-row gap-x-5 gap-y-5 mt-20'>
           
           { generatedImages && generatedImages.map((item,index)=>
          
