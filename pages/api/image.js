@@ -32,49 +32,48 @@ export default async function handler(
    const form = new formidable.IncomingForm()
  
 
-   let oldPath = ''
  
    const data = await new Promise((resolve, reject) => {
     form.parse(req, (err, fields, files) => {
       if (err) return reject(err)
       
      
-      oldPath = files.file.filepath
+      let oldPath = files.file.filepath
 
       
-      // let newPath = `/tmp/original.png` //testing: `./public/uploads/original.png`
-      // mv(oldPath, newPath, function(err) {
-      // });
+      let newPath = `./public/uploads/original.png`
+      mv(oldPath, newPath, function(err) {
+      });
      
      
-      resolve(oldPath)
+      resolve(newPath)
     })
     })
    
 
-    // const resizeImage = () => {
-    //   let inputFile = data
-    //   let outputFile = '/tmp/upload.png' //testing: './public/uploads/upload.png'
-    //   sharp(inputFile)
-    //   .resize(1024,1024,{fit:'contain'})
-    //   .toFile(outputFile)
-    //   .then(() => generateImage())
-    //   .catch((err)=>{
-    //     console.log('Error Occured Resizing')
-    //     res.status(500).json({error:err})
+    const resizeImage = () => {
+      let inputFile = data
+      let outputFile = './public/uploads/upload.png'
+      sharp(inputFile)
+      .resize(1024,1024,{fit:'contain'})
+      .toFile(outputFile)
+      .then(() => generateImage())
+      .catch((err)=>{
+        console.log('Error Occured Resizing')
+        res.status(500).json({error:err})
       
-    //   })
-    // }
+      })
+    }
 
-    // resizeImage()
+    resizeImage()
 
   
   const generateImage = async () =>{
     try{
-           console.log(oldPath)
+           
            const response = await openai.createImageVariation(
-            fs.createReadStream(oldPath),
-           1,
+            fs.createReadStream('./public/uploads/upload.png'),
+           3,
            "512x512")
       
           
@@ -95,7 +94,7 @@ export default async function handler(
 
   }
 
-  generateImage()
+
 
 
 

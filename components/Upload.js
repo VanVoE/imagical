@@ -25,7 +25,7 @@ import 'react-toastify/dist/ReactToastify.css';
     setButtonText('Generate')
     setButtonDisabled(false)
     setButtonCss(enabled)
-    console.log('testing...')
+   
    }else{
     setButtonText('Sign In')
     setButtonDisabled(true)
@@ -82,17 +82,11 @@ import 'react-toastify/dist/ReactToastify.css';
           
           setGeneratedImages(response.data.data)
 
-         console.log('testing')
-        //   const updatedData = {
-        //     user: userProfile,
-        //     credit: userCredit - 1, // cost 
-        //   }
-        //   const removeCredit = await axios.post('/api/credit',updatedData)
-        //   .then(()=>{
+         if(response.status == 200){
+          spendCredit()
+
+         }
           
-        //   decreaseUserCredit(userCredit) 
-         
-        // })
           
         }).catch((e)=>{
          
@@ -113,6 +107,19 @@ import 'react-toastify/dist/ReactToastify.css';
 
       
 
+    }
+
+    const spendCredit = async () => {
+      const updatedData = {
+        user: userProfile,
+        credit: userCredit - 1, // cost 
+      }
+      const removeCredit = await axios.post('/api/credit',updatedData)
+      .then(()=>{
+      
+      decreaseUserCredit(userCredit) 
+     
+    })
     }
 
   return (
