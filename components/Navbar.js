@@ -84,12 +84,12 @@ const Navbar = ({userProfile,signIn, signOut, session, userCredit, increaseUserC
             
          
                
-                <div className='flex space-x-10'>
+                <div className='flex space-x-10 text-sm'>
                   
                   
                   <div onClick={buyCoins} className='cursor-pointer'>Buy Coins</div>
                   
-                  {session ? <div onClick={() => signOut()} className='cursor-pointer'>Sign Out - {userCredit} Coins Left</div> : <div onClick={() => signIn()} className='cursor-pointer'>Sign In</div>}
+                  {session ? <div onClick={() => signOut()} className='cursor-pointer'>Sign Out - {userCredit} Coins</div> : <div onClick={() => signIn()} className='cursor-pointer'>Sign In</div>}
                   
                 </div>
            

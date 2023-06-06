@@ -129,7 +129,7 @@ import 'react-toastify/dist/ReactToastify.css';
         <div className='w-full md:w-[312px] h-[312px] pl-5 pr-5 md:p-0'>
         <form onSubmit={handleSubmit} className='w-full h-full'>
         {uploadedImage ? (
-          <div className='relative w-[312px] h-[312px]'>
+          <div className='relative w-[312px] h-[312px] m-auto'>
             <img src={uploadedImage} alt="" className='w-[312px] h-[312px] object-contain'/>
             <div onClick={()=>deleteUpload()} className='cursor-pointer absolute top-2 right-2 bg-purple-600 p-3 rounded-full hover:bg-purple-300'>
               <BsFillTrash3Fill className='text-lg'/>
